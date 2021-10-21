@@ -1,14 +1,20 @@
-import React from "react";
+import React,{ useState } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi";
 
+
 function SushiContainer({sushis}) {
-  console.log(sushis,"second")
+
+const [sushindex,setsushiindex]=useState(0)
+
+function handleClick(){
+ sushindex("fire")
+}
   return (
     <div className="belt">
       {sushis.map(sushi => <Sushi sushi={sushi} />)}
       
-      <MoreButton />
+      <MoreButton onClick={handleClick}/>
     </div>
   );
 }
